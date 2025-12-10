@@ -1,0 +1,6 @@
+# Week 1 - Wednesday Demos: Neural Network Fundamentals
+# Requirements for perceptron, activation functions, and forward propagation demos
+
+numpy>=1.21.0
+matplotlib>=3.4.0
+

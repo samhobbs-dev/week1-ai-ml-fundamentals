@@ -233,10 +233,10 @@ print("Customer Segmentation Example")
 # Create customer data
 np.random.seed(42)
 customers = np.vstack([
-    np.random.normal([30, 80], [8, 15], 50),   # Young, high spenders
-    np.random.normal([55, 70], [10, 20], 50),  # Middle-aged, moderate
-    np.random.normal([25, 30], [7, 12], 50),   # Young, low spenders
-    np.random.normal([60, 25], [8, 10], 50),   # Older, low spenders
+    np.random.normal([30, 80], [8, 15], (50,2)),   # Young, high spenders
+    np.random.normal([55, 70], [10, 20], (50,2)),  # Middle-aged, moderate
+    np.random.normal([25, 30], [7, 12], (50,2)),   # Young, low spenders
+    np.random.normal([60, 25], [8, 10], (50,2)),   # Older, low spenders
 ])
 
 print(f"\nCustomer data: {len(customers)} customers")
