@@ -54,36 +54,36 @@ print(f"W2 shape: {W2.shape}, b2 shape: {b2.shape}")
 
 # TODO: Step 1 - Hidden Layer Linear Transform
 # z1 = X @ W1 + b1
-z1 = None  # Your code
+z1 = np.dot(X, W1) + b1
 
 print(f"\n--- Step 1: z1 = X @ W1 + b1 ---")
-# print(f"z1 = {z1}")
+print(f"z1 = {z1}")
 
 # TODO: Step 2 - Hidden Layer Activation (ReLU)
 # a1 = relu(z1)
-a1 = None  # Your code
+a1 = relu(z1)
 
 print(f"\n--- Step 2: a1 = ReLU(z1) ---")
-# print(f"a1 = {a1}")
+print(f"a1 = {a1}")
 
 # TODO: Step 3 - Output Layer Linear Transform
 # z2 = a1 @ W2 + b2
-z2 = None  # Your code
+z2 = np.dot(a1, W2) + b2
 
 print(f"\n--- Step 3: z2 = a1 @ W2 + b2 ---")
-# print(f"z2 = {z2}")
+print(f"z2 = {z2}")
 
 # TODO: Step 4 - Output Layer Activation (Sigmoid)
 # y_hat = sigmoid(z2)
-y_hat = None  # Your code
+y_hat = sigmoid(z2)
 
 print(f"\n--- Step 4: y_hat = sigmoid(z2) ---")
-# print(f"y_hat = {y_hat}")
+print(f"y_hat = {y_hat}")
 
 # TODO: Interpret the output
 print(f"\n--- Interpretation ---")
-# print(f"Probability of positive class: {y_hat[0]:.4f}")
-# print(f"Classification (threshold=0.5): {int(y_hat[0] >= 0.5)}")
+print(f"Probability of positive class: {y_hat[0]:.4f}")
+print(f"Classification (threshold=0.5): {int(y_hat[0] >= 0.5)}")
 
 
 # =============================================================================
@@ -112,11 +112,11 @@ inputs = [
 for i, X_test in enumerate(inputs, start=2):
     print(f"\n--- Input {i}: X = {X_test} ---")
     # TODO: Run forward pass and print results
-    # z1, a1, z2, y_hat = forward_pass_simple(X_test, W1, b1, W2, b2)
-    # print(f"z1 = {z1}")
-    # print(f"a1 = {a1}")
-    # print(f"z2 = {z2}")
-    # print(f"y_hat = {y_hat[0]:.4f}")
+    z1, a1, z2, y_hat = forward_pass_simple(X_test, W1, b1, W2, b2)
+    print(f"z1 = {z1}")
+    print(f"a1 = {a1}")
+    print(f"z2 = {z2}")
+    print(f"y_hat = {y_hat[0]:.4f}")
 
 
 # =============================================================================

@@ -16,32 +16,33 @@ import matplotlib.pyplot as plt
 def step(z):
     """Step function (Heaviside)."""
     # TODO: Return 1 if z >= 0, else 0
-    pass
+    z = np.asarray(z)
+    return (z >= 0).astype(float)
 
 
 def sigmoid(z):
     """Sigmoid / Logistic function."""
     # TODO: Return 1 / (1 + exp(-z))
     # Hint: Use np.clip(z, -500, 500) to avoid overflow
-    pass
+    return 1 / (1 + np.exp(-np.clip(z, -500, 500)))
 
 
 def tanh_activation(z):
     """Hyperbolic tangent."""
     # TODO: Return tanh(z)
-    pass
+    return np.tanh(z)
 
 
 def relu(z):
     """Rectified Linear Unit."""
     # TODO: Return max(0, z)
-    pass
+    return np.maximum(0, z)
 
 
 def leaky_relu(z, alpha=0.01):
     """Leaky ReLU."""
     # TODO: Return z if z > 0, else alpha * z
-    pass
+    return np.where(z > 0, z, alpha * z)
 
 
 # =============================================================================
@@ -51,25 +52,26 @@ def leaky_relu(z, alpha=0.01):
 def sigmoid_derivative(z):
     """Derivative of sigmoid."""
     # TODO: sigmoid(z) * (1 - sigmoid(z))
-    pass
+    s = sigmoid(z)
+    return s * (1 - s)
 
 
 def tanh_derivative(z):
     """Derivative of tanh."""
     # TODO: 1 - tanh(z)^2
-    pass
+    return 1 - np.tanh(z)**2
 
 
 def relu_derivative(z):
     """Derivative of ReLU."""
     # TODO: 1 if z > 0, else 0
-    pass
+    return (z > 0).astype(float)
 
 
 def leaky_relu_derivative(z, alpha=0.01):
     """Derivative of Leaky ReLU."""
     # TODO: 1 if z > 0, else alpha
-    pass
+    return np.where(z > 0, 1, alpha)
 
 
 # =============================================================================
@@ -84,26 +86,26 @@ if __name__ == "__main__":
     z = np.linspace(-5, 5, 1000)
     
     # TODO: Create subplot grid for activations
-    # fig, axes = plt.subplots(2, 3, figsize=(15, 10))
-    # 
-    # activations = [
-    #     ('Step', step),
-    #     ('Sigmoid', sigmoid),
-    #     ('Tanh', tanh_activation),
-    #     ('ReLU', relu),
-    #     ('Leaky ReLU', leaky_relu)
-    # ]
-    # 
-    # for idx, (name, func) in enumerate(activations):
-    #     ax = axes[idx // 3, idx % 3]
-    #     ax.plot(z, func(z), linewidth=2)
-    #     ax.axhline(y=0, color='black', linewidth=0.5)
-    #     ax.axvline(x=0, color='black', linewidth=0.5)
-    #     ax.set_title(name)
-    #     ax.grid(True, alpha=0.3)
-    # 
-    # plt.tight_layout()
-    # plt.show()
+    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    
+    activations = [
+        ('Step', step),
+        ('Sigmoid', sigmoid),
+        ('Tanh', tanh_activation),
+        ('ReLU', relu),
+        ('Leaky ReLU', leaky_relu)
+    ]
+    
+    for idx, (name, func) in enumerate(activations):
+        ax = axes[idx // 3, idx % 3]
+        ax.plot(z, func(z), linewidth=2)
+        ax.axhline(y=0, color='black', linewidth=0.5)
+        ax.axvline(x=0, color='black', linewidth=0.5)
+        ax.set_title(name)
+        ax.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
     
     # =============================================================================
     # EXPERIMENT A: OUTPUT RANGES

@@ -24,10 +24,10 @@ class Perceptron:
         np.random.seed(42)
         
         # TODO: Initialize weights with small random values
-        self.weights = None  # Shape: (n_features,)
+        self.weights = np.random.randn(n_features) * 0.1
         
         # TODO: Initialize bias to 0
-        self.bias = None
+        self.bias = 0.0
         
         self.learning_rate = learning_rate
         self.activation_name = activation
@@ -35,11 +35,9 @@ class Perceptron:
     def _activation(self, z):
         """Apply activation function."""
         if self.activation_name == 'step':
-            # TODO: Return 1 if z >= 0, else 0
-            pass
+            return (z >= 0).astype(int)
         elif self.activation_name == 'sigmoid':
-            # TODO: Return 1 / (1 + exp(-z))
-            pass
+            return 1 / (1 + np.exp(-z))
     
     def forward(self, X):
         """Compute forward pass."""
@@ -47,7 +45,7 @@ class Perceptron:
         X = np.atleast_2d(X)
         
         # TODO: Compute z = X @ weights + bias
-        z = None
+        z = np.dot(X, self.weights) + self.bias
         
         # TODO: Apply activation
         return self._activation(z)
@@ -68,16 +66,18 @@ class Perceptron:
             
             for xi, yi in zip(X, y):
                 # TODO: Get prediction (single sample)
-                prediction = None
+                prediction = self.predict(xi.reshape(1, -1))[0]
                 
                 # TODO: Calculate error
-                error = None
+                error = yi - prediction
                 
                 # TODO: Update weights and bias if error != 0
                 if error != 0:
+                    errors += 1
                     # w = w + lr * error * x
                     # b = b + lr * error
-                    errors += 1
+                    self.weights += self.learning_rate * error * xi
+                    self.bias += self.learning_rate * error
             
             history['errors'].append(errors)
             history['weights'].append(self.weights.copy())
@@ -98,18 +98,18 @@ def plot_decision_boundary(perceptron, X, y, title):
     plt.figure(figsize=(8, 6))
     
     # TODO: Plot data points
-    # for label, marker, color in [(0, 'o', 'red'), (1, 's', 'green')]:
-    #     mask = y == label
-    #     plt.scatter(X[mask, 0], X[mask, 1], c=color, marker=marker,
-    #                s=150, label=f'Class {label}', edgecolors='black')
+    for label, marker, color in [(0, 'o', 'red'), (1, 's', 'green')]:
+        mask = y == label
+        plt.scatter(X[mask, 0], X[mask, 1], c=color, marker=marker,
+                   s=150, label=f'Class {label}', edgecolors='black')
     
     # TODO: Plot decision boundary
-    # w1, w2 = perceptron.weights
-    # b = perceptron.bias
-    # if abs(w2) > 1e-6:
-    #     x1_range = np.linspace(-0.5, 1.5, 100)
-    #     x2_boundary = -(w1 * x1_range + b) / w2
-    #     plt.plot(x1_range, x2_boundary, 'b-', linewidth=2, label='Decision Boundary')
+    w1, w2 = perceptron.weights
+    b = perceptron.bias
+    if abs(w2) > 1e-6:
+        x1_range = np.linspace(-0.5, 1.5, 100)
+        x2_boundary = -(w1 * x1_range + b) / w2
+        plt.plot(x1_range, x2_boundary, 'b-', linewidth=2, label='Decision Boundary')
     
     plt.xlim(-0.5, 1.5)
     plt.ylim(-0.5, 1.5)
@@ -136,15 +136,15 @@ if __name__ == "__main__":
     y_and = np.array([0, 0, 0, 1])
     
     # TODO: Create and train perceptron
-    # perceptron_and = Perceptron(n_features=2, learning_rate=0.1)
-    # perceptron_and, history_and = perceptron_and.fit(X_and, y_and)
-    # 
-    # predictions = perceptron_and.predict(X_and)
-    # print(f"Predictions: {predictions}")
-    # print(f"Actual: {y_and}")
-    # print(f"Accuracy: {(predictions == y_and).mean():.2%}")
-    # 
-    # plot_decision_boundary(perceptron_and, X_and, y_and, 'AND Gate')
+    perceptron_and = Perceptron(n_features=2, learning_rate=0.1)
+    perceptron_and, history_and = perceptron_and.fit(X_and, y_and)
+    
+    predictions = perceptron_and.predict(X_and)
+    print(f"Predictions: {predictions}")
+    print(f"Actual: {y_and}")
+    print(f"Accuracy: {(predictions == y_and).mean():.2%}")
+    
+    plot_decision_boundary(perceptron_and, X_and, y_and, 'AND Gate')
     
     # OR Gate
     print("\n--- OR GATE ---")
@@ -159,8 +159,8 @@ if __name__ == "__main__":
     y_xor = np.array([0, 1, 1, 0])
     
     # TODO: Attempt XOR
-    # perceptron_xor = Perceptron(n_features=2, learning_rate=0.1)
-    # perceptron_xor, history_xor = perceptron_xor.fit(X_xor, y_xor, epochs=1000)
+    perceptron_xor = Perceptron(n_features=2, learning_rate=0.1)
+    perceptron_xor, history_xor = perceptron_xor.fit(X_xor, y_xor, epochs=1000)
     
     # =============================================================================
     # REFLECTION QUESTIONS
