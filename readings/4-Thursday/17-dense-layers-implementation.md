@@ -242,6 +242,69 @@ layers.Dense(
 )
 ```
 
+### Understanding Output Layer Activations
+
+You've learned about **hidden layer activations** (ReLU, Tanh) on Wednesday. Now that you're building complete models, let's clarify the special activations used in **output layers** - they format your network's predictions for specific tasks.
+
+**Softmax for Multi-Class Classification:**
+
+When classifying into multiple mutually exclusive categories (digits 0-9, cat/dog/bird), the output layer uses **softmax** to convert raw scores into a probability distribution:
+
+```python
+# MNIST: Classify handwritten digits (10 classes)
+layers.Dense(10, activation='softmax')
+```
+
+**What Softmax Does:**
+
+Softmax transforms a vector of raw scores (logits) into probabilities that sum to 1:
+
+```
+Input logits:  [2.0,  1.0,  0.1,  -1.0, ...]
+                 ↓ softmax
+Output probs:  [0.66, 0.24, 0.10, 0.00, ...]  (sum = 1.0)
+```
+
+**Formula:**
+```
+For each class i:
+softmax(z_i) = e^(z_i) / Σ(e^(z_j)) for all j
+
+The exponential emphasizes larger values, and the sum normalization ensures valid probabilities.
+```
+
+**Softmax vs Sigmoid:**
+
+| Activation | Use Case | Output Constraint |
+|------------|----------|-------------------|
+| **Sigmoid** | Binary classification (one output) | Single probability in (0, 1) |
+| **Softmax** | Multi-class classification (n outputs) | n probabilities summing to 1 |
+| **Linear** | Regression | Unbounded real number |
+
+**Example: Predicting with Softmax**
+
+```python
+import numpy as np
+
+# Model outputs softmax probabilities
+predictions = model.predict(X_test[:1])
+# Output: [[0.01, 0.05, 0.72, 0.03, 0.02, 0.08, 0.06, 0.01, 0.01, 0.01]]
+
+# Interpretation: 72% confident it's class 2, 8% class 5, etc.
+predicted_class = predictions.argmax()  # Returns 2
+confidence = predictions.max()  # Returns 0.72
+```
+
+**When to Use Softmax:**
+- Multi-class classification with **one correct answer** (MNIST, ImageNet, sentiment categories)
+- Pairs with `categorical_crossentropy` or `sparse_categorical_crossentropy` loss
+
+**When NOT to Use Softmax:**
+- Multi-label classification (image can be both "outdoor" AND "sunset") - use sigmoid on each output instead
+- Regression - use linear (no activation)
+
+Now when you see `Dense(10, activation='softmax')` in your models, you understand it's creating 10 neurons that output a probability distribution over 10 classes.
+
 ## Code Example: Dense Layer Deep Dive
 
 ```python
