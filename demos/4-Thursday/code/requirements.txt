@@ -1,0 +1,7 @@
+# Week 1 - Thursday Demos: TensorFlow and Keras
+# Requirements for TensorFlow basics, Keras models, and Dense layer demos
+
+tensorflow>=2.10.0
+numpy>=1.21.0
+matplotlib>=3.4.0
+
