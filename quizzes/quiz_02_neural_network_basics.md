@@ -4,128 +4,128 @@
 
 ### 1. What biological structure inspired artificial neural networks?
 
-- [ ] A) The human heart
-- [ ] B) The human brain and its neurons
-- [ ] C) DNA molecules
+- [ ] A) The human brain and its neurons
+- [ ] B) DNA molecules
+- [ ] C) The human heart
 - [ ] D) Blood vessels
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) The human brain and its neurons
+**Correct Answer:** A) The human brain and its neurons
 
 **Explanation:** Artificial neural networks are inspired by biological neurons that receive signals through dendrites, process them in the cell body, and transmit outputs through axons. The artificial equivalents are inputs, weighted sums, and activations.
 
 - **Why others are wrong:**
-  - A, C, D) These are not computational structures that process signals in the way neurons do
+  - B, C, D) These are not computational structures that process signals in the way neurons do
 </details>
 
 ---
 
 ### 2. What does an artificial neuron compute?
 
-- [ ] A) Random numbers
-- [ ] B) Weighted sum of inputs plus bias, passed through an activation function
-- [ ] C) Only the average of inputs
-- [ ] D) The maximum input value
+- [ ] A) Only the average of inputs
+- [ ] B) Random numbers
+- [ ] C) The maximum input value
+- [ ] D) Weighted sum of inputs plus bias, passed through an activation function
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Weighted sum of inputs plus bias, passed through an activation function
+**Correct Answer:** D) Weighted sum of inputs plus bias, passed through an activation function
 
 **Explanation:** A neuron computes: output = activation(w1*x1 + w2*x2 + ... + wn*xn + b). Each input is multiplied by its weight, summed with the bias, then passed through an activation function.
 
 - **Why others are wrong:**
-  - A) Neurons perform deterministic calculations
-  - C) Average doesn't use weights
-  - D) Maximum would be max pooling, not a basic neuron
+  - A) Average doesn't use weights
+  - B) Neurons perform deterministic calculations
+  - C) Maximum would be max pooling, not a basic neuron
 </details>
 
 ---
 
 ### 3. In the perceptron model, what do the weights represent?
 
-- [ ] A) The physical mass of the neuron
-- [ ] B) The importance or influence of each input on the output
-- [ ] C) The speed of computation
-- [ ] D) The number of layers
+- [ ] A) The importance or influence of each input on the output
+- [ ] B) The number of layers
+- [ ] C) The physical mass of the neuron
+- [ ] D) The speed of computation
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) The importance or influence of each input on the output
+**Correct Answer:** A) The importance or influence of each input on the output
 
 **Explanation:** Weights determine how much each input contributes to the output. Large positive weights mean the input strongly pushes toward positive class; large negative weights push toward negative class; weights near zero mean the input has little influence.
 
 - **Why others are wrong:**
-  - A) Artificial neurons have no physical mass
-  - C) Weights don't affect computational speed
-  - D) Layer count is a separate architectural choice
+  - B) Layer count is a separate architectural choice
+  - C) Artificial neurons have no physical mass
+  - D) Weights don't affect computational speed
 </details>
 
 ---
 
 ### 4. What is the purpose of the bias term (b) in a neuron?
 
-- [ ] A) To make computation faster
-- [ ] B) To shift the decision boundary away from the origin
-- [ ] C) To remove outliers
-- [ ] D) To normalize the inputs
+- [ ] A) To shift the decision boundary away from the origin
+- [ ] B) To normalize the inputs
+- [ ] C) To make computation faster
+- [ ] D) To remove outliers
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) To shift the decision boundary away from the origin
+**Correct Answer:** A) To shift the decision boundary away from the origin
 
 **Explanation:** Without bias, the decision boundary (w*x = 0) must pass through the origin. The bias allows the boundary to shift: w*x + b = 0 can be positioned anywhere. This adds flexibility to fit data that isn't centered at zero.
 
 - **Why others are wrong:**
-  - A) Bias doesn't affect speed
-  - C) Outlier removal is preprocessing
-  - D) Normalization is a separate step
+  - B) Normalization is a separate step
+  - C) Bias doesn't affect speed
+  - D) Outlier removal is preprocessing
 </details>
 
 ---
 
 ### 5. Why was the XOR problem significant in neural network history?
 
-- [ ] A) It was the first problem computers could solve
-- [ ] B) It proved that a single perceptron cannot learn non-linearly separable patterns
+- [ ] A) It demonstrated the first successful AI
+- [ ] B) It was the first problem computers could solve
 - [ ] C) It showed neural networks were better than humans
-- [ ] D) It demonstrated the first successful AI
+- [ ] D) It proved that a single perceptron cannot learn non-linearly separable patterns
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) It proved that a single perceptron cannot learn non-linearly separable patterns
+**Correct Answer:** D) It proved that a single perceptron cannot learn non-linearly separable patterns
 
 **Explanation:** Minsky and Papert (1969) proved that XOR, which requires a non-linear decision boundary, cannot be solved by a single perceptron. This led to the first "AI winter" but was later resolved by multi-layer networks.
 
 - **Why others are wrong:**
-  - A, C, D) These don't describe XOR's historical significance
+  - A, B, C) These don't describe XOR's historical significance
 </details>
 
 ---
 
 ### 6. What is the primary purpose of activation functions in neural networks?
 
-- [ ] A) To speed up computation
-- [ ] B) To introduce non-linearity, enabling the network to learn complex patterns
-- [ ] C) To reduce the number of parameters
-- [ ] D) To normalize the output
+- [ ] A) To normalize the output
+- [ ] B) To speed up computation
+- [ ] C) To introduce non-linearity, enabling the network to learn complex patterns
+- [ ] D) To reduce the number of parameters
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) To introduce non-linearity, enabling the network to learn complex patterns
+**Correct Answer:** C) To introduce non-linearity, enabling the network to learn complex patterns
 
 **Explanation:** Without activation functions, stacking layers is pointless: multiple linear transformations collapse into a single linear transformation. Non-linear activations break this, allowing each layer to learn distinct representations.
 
 - **Why others are wrong:**
-  - A) Some activations (exp, sigmoid) are slower
-  - C) Activations don't change parameter count
-  - D) Normalization is handled by batch norm or layer norm
+  - A) Normalization is handled by batch norm or layer norm
+  - B) Some activations (exp, sigmoid) are slower
+  - D) Activations don't change parameter count
 </details>
 
 ---
@@ -176,65 +176,65 @@
 
 ### 9. What is the formula for ReLU?
 
-- [ ] A) f(z) = 1 / (1 + e^(-z))
-- [ ] B) f(z) = max(0, z)
-- [ ] C) f(z) = (e^z - e^(-z)) / (e^z + e^(-z))
-- [ ] D) f(z) = z^2
+- [ ] A) f(z) = max(0, z)
+- [ ] B) f(z) = z^2
+- [ ] C) f(z) = 1 / (1 + e^(-z))
+- [ ] D) f(z) = (e^z - e^(-z)) / (e^z + e^(-z))
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) f(z) = max(0, z)
+**Correct Answer:** A) f(z) = max(0, z)
 
 **Explanation:** ReLU (Rectified Linear Unit) outputs the input if positive, otherwise outputs 0. It's computationally cheap, prevents vanishing gradients for positive values, and is the default choice for hidden layers.
 
 - **Why others are wrong:**
-  - A) That's the sigmoid formula
-  - C) That's the tanh formula
-  - D) That's a quadratic function, not an activation
+  - B) That's a quadratic function, not an activation
+  - C) That's the sigmoid formula
+  - D) That's the tanh formula
 </details>
 
 ---
 
 ### 10. What is the "dying ReLU" problem?
 
-- [ ] A) ReLU makes networks too slow
-- [ ] B) Neurons that output 0 get stuck because their gradient is 0
-- [ ] C) ReLU causes memory issues
-- [ ] D) ReLU only works for images
+- [ ] A) ReLU only works for images
+- [ ] B) ReLU makes networks too slow
+- [ ] C) Neurons that output 0 get stuck because their gradient is 0
+- [ ] D) ReLU causes memory issues
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Neurons that output 0 get stuck because their gradient is 0
+**Correct Answer:** C) Neurons that output 0 get stuck because their gradient is 0
 
 **Explanation:** When a ReLU neuron always outputs 0 (negative pre-activation), its gradient is 0, so weights never update. The neuron becomes permanently "dead." Leaky ReLU fixes this by allowing a small gradient for negative inputs.
 
 - **Why others are wrong:**
-  - A) ReLU is actually very fast
-  - C) ReLU has no memory issues
-  - D) ReLU works for any data type
+  - A) ReLU works for any data type
+  - B) ReLU is actually very fast
+  - D) ReLU has no memory issues
 </details>
 
 ---
 
 ### 11. Which activation function allows a small gradient for negative inputs, fixing the dying ReLU problem?
 
-- [ ] A) Sigmoid
-- [ ] B) Tanh
-- [ ] C) Leaky ReLU
-- [ ] D) Step function
+- [ ] A) Leaky ReLU
+- [ ] B) Step function
+- [ ] C) Sigmoid
+- [ ] D) Tanh
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) Leaky ReLU
+**Correct Answer:** A) Leaky ReLU
 
 **Explanation:** Leaky ReLU(z) = z if z > 0, else alpha*z (typically alpha=0.01). The small slope for negative values ensures gradients never become exactly 0, preventing neurons from dying.
 
 - **Why others are wrong:**
-  - A, B) These suffer from vanishing gradients at extremes
-  - D) Step function has 0 gradient everywhere except the discontinuity
+  - B) Step function has 0 gradient everywhere except the discontinuity
+  - C, D) These suffer from vanishing gradients at extremes
 </details>
 
 ---
@@ -263,22 +263,22 @@
 
 ### 13. What does the Universal Approximation Theorem state?
 
-- [ ] A) Neural networks can only approximate linear functions
-- [ ] B) A network with one hidden layer and enough neurons can approximate any continuous function
+- [ ] A) A network with one hidden layer and enough neurons can approximate any continuous function
+- [ ] B) Neural networks always find the optimal solution
 - [ ] C) All neural networks are universal
-- [ ] D) Neural networks always find the optimal solution
+- [ ] D) Neural networks can only approximate linear functions
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) A network with one hidden layer and enough neurons can approximate any continuous function
+**Correct Answer:** A) A network with one hidden layer and enough neurons can approximate any continuous function
 
 **Explanation:** The theorem proves that MLPs are universal function approximators - given enough neurons, they can learn any continuous mapping. However, "enough neurons" may be impractically large, which is why depth (more layers) often works better.
 
 - **Why others are wrong:**
-  - A) The theorem proves they can approximate non-linear functions
+  - B) The theorem doesn't guarantee training will find that solution
   - C) The theorem has specific conditions (activation type, width)
-  - D) The theorem doesn't guarantee training will find that solution
+  - D) The theorem proves they can approximate non-linear functions
 </details>
 
 ---
@@ -307,21 +307,21 @@
 
 ### 15. Which loss function is most appropriate for binary classification?
 
-- [ ] A) Mean Squared Error (MSE)
-- [ ] B) Binary Cross-Entropy
-- [ ] C) Categorical Cross-Entropy
-- [ ] D) Mean Absolute Error (MAE)
+- [ ] A) Binary Cross-Entropy
+- [ ] B) Mean Absolute Error (MAE)
+- [ ] C) Mean Squared Error (MSE)
+- [ ] D) Categorical Cross-Entropy
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Binary Cross-Entropy
+**Correct Answer:** A) Binary Cross-Entropy
 
 **Explanation:** Binary cross-entropy: L = -[y*log(p) + (1-y)*log(1-p)]. It heavily penalizes confident wrong predictions and is designed for probability outputs from sigmoid activation in binary classification.
 
 - **Why others are wrong:**
-  - A, D) MSE and MAE are for regression
-  - C) Categorical CE is for multi-class (>2 classes)
+  - B, C) MAE and MSE are for regression
+  - D) Categorical CE is for multi-class (>2 classes)
 </details>
 
 ---
@@ -438,15 +438,15 @@ z = np.array([-2, -1, 0, 1, 2])
 print(relu(z))
 ```
 
-- [ ] A) [-2, -1, 0, 1, 2]
-- [ ] B) [0, 0, 0, 1, 2]
-- [ ] C) [2, 1, 0, 1, 2]
+- [ ] A) [0, 0, 0, 1, 2]
+- [ ] B) [2, 1, 0, 1, 2]
+- [ ] C) [-2, -1, 0, 1, 2]
 - [ ] D) [0.1, 0.3, 0.5, 0.7, 0.9]
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) [0, 0, 0, 1, 2]
+**Correct Answer:** A) [0, 0, 0, 1, 2]
 
 **Explanation:** ReLU(z) = max(0, z). Negative values become 0, non-negative values pass through unchanged. So: max(0,-2)=0, max(0,-1)=0, max(0,0)=0, max(0,1)=1, max(0,2)=2.
 </details>
@@ -464,15 +464,15 @@ def sigmoid(z):
 print(round(sigmoid(0), 1))
 ```
 
-- [ ] A) 0.0
-- [ ] B) 0.5
-- [ ] C) 1.0
-- [ ] D) 0.7
+- [ ] A) 0.7
+- [ ] B) 1.0
+- [ ] C) 0.5
+- [ ] D) 0.0
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) 0.5
+**Correct Answer:** C) 0.5
 
 **Explanation:** sigmoid(0) = 1 / (1 + e^0) = 1 / (1 + 1) = 1/2 = 0.5. The sigmoid function passes through (0, 0.5) - zero input gives 50% probability.
 </details>
@@ -527,15 +527,15 @@ loss = -np.mean(
 print(f"Loss type: ?")
 ```
 
-- [ ] A) Mean Squared Error
-- [ ] B) Binary Cross-Entropy
-- [ ] C) Categorical Cross-Entropy
+- [ ] A) Categorical Cross-Entropy
+- [ ] B) Mean Squared Error
+- [ ] C) Binary Cross-Entropy
 - [ ] D) Hinge Loss
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Binary Cross-Entropy
+**Correct Answer:** C) Binary Cross-Entropy
 
 **Explanation:** The formula -[y*log(p) + (1-y)*log(1-p)] averaged over samples is exactly binary cross-entropy. The epsilon prevents log(0).
 </details>
@@ -559,15 +559,15 @@ output = forward_pass(x, W, b)
 print(output)
 ```
 
-- [ ] A) [8.5]
-- [ ] B) [6.0]
-- [ ] C) [5.5]
-- [ ] D) [3.5]
+- [ ] A) [3.5]
+- [ ] B) [8.5]
+- [ ] C) [6.0]
+- [ ] D) [5.5]
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** A) [8.5]
+**Correct Answer:** B) [8.5]
 
 **Explanation:** z = dot([2, 3], [[1], [2]]) + [0.5] = (2*1 + 3*2) + 0.5 = (2 + 6) + 0.5 = 8.5
 </details>
@@ -652,37 +652,37 @@ print(output)
 
 ### 33. You're building a neural network for image classification. For hidden layers, which activation function is the best default choice?
 
-- [ ] A) Sigmoid
-- [ ] B) Step function
-- [ ] C) ReLU
-- [ ] D) Linear (no activation)
+- [ ] A) ReLU
+- [ ] B) Linear (no activation)
+- [ ] C) Sigmoid
+- [ ] D) Step function
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) ReLU
+**Correct Answer:** A) ReLU
 
 **Explanation:** ReLU is the modern default for hidden layers because: (1) computationally efficient, (2) no vanishing gradient for positive values, (3) produces sparse activations, (4) empirically works well.
 
 - **Why others are wrong:**
-  - A) Sigmoid has vanishing gradient problems in deep networks
-  - B) Step function is non-differentiable, can't train with gradient descent
-  - D) No activation collapses the network to a single linear layer
+  - B) No activation collapses the network to a single linear layer
+  - C) Sigmoid has vanishing gradient problems in deep networks
+  - D) Step function is non-differentiable, can't train with gradient descent
 </details>
 
 ---
 
 ### 34. Your model has sigmoid output with 10 neurons for a 10-class classification problem. What's wrong with this approach?
 
-- [ ] A) Nothing is wrong
-- [ ] B) Sigmoid outputs don't sum to 1, should use softmax instead
-- [ ] C) Need more than 10 neurons
-- [ ] D) Should use ReLU instead
+- [ ] A) Sigmoid outputs don't sum to 1, should use softmax instead
+- [ ] B) Should use ReLU instead
+- [ ] C) Nothing is wrong
+- [ ] D) Need more than 10 neurons
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Sigmoid outputs don't sum to 1, should use softmax instead
+**Correct Answer:** A) Sigmoid outputs don't sum to 1, should use softmax instead
 
 **Explanation:** For multi-class classification, outputs should be probabilities that sum to 1 (one class must be chosen). Softmax ensures this: softmax(z_i) = e^z_i / sum(e^z_j). Independent sigmoids could sum to 7.3 or 0.2.
 </details>
@@ -691,17 +691,22 @@ print(output)
 
 ### 35. During training, you notice that many neurons in your network consistently output exactly 0. What might be the problem?
 
-- [ ] A) The model is converging correctly
-- [ ] B) Dying ReLU - neurons have negative pre-activations and zero gradients
-- [ ] C) The learning rate is too low
-- [ ] D) The dataset is too small
+- [ ] A) Dying ReLU - neurons have negative pre-activations and zero gradients
+- [ ] B) The dataset is too small
+- [ ] C) The model is converging correctly
+- [ ] D) The learning rate is too low
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Dying ReLU - neurons have negative pre-activations and zero gradients
+**Correct Answer:** A) Dying ReLU - neurons have negative pre-activations and zero gradients
 
 **Explanation:** Dying ReLU occurs when neurons consistently receive negative inputs, outputting 0 with gradient 0. They never recover because gradients don't flow. Solutions: Leaky ReLU, better initialization, lower learning rate.
+
+- **Why others are wrong:**
+  - B) Dataset size doesn't cause this specific pattern
+  - C) Converging correctly wouldn't show many dead neurons
+  - D) Low learning rate would make training slow, not kill neurons
 </details>
 
 ---
@@ -725,39 +730,44 @@ print(output)
 
 ### 37. Your network has 784 inputs (28x28 image) and you want a hidden layer with 256 neurons. How many parameters does this hidden layer have (including biases)?
 
-- [ ] A) 784 * 256 = 200,704
-- [ ] B) 784 * 256 + 256 = 200,960
-- [ ] C) 784 + 256 = 1,040
-- [ ] D) 256 * 256 + 256 = 65,792
+- [ ] A) 256 * 256 + 256 = 65,792
+- [ ] B) 784 + 256 = 1,040
+- [ ] C) 784 * 256 + 256 = 200,960
+- [ ] D) 784 * 256 = 200,704
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) 784 * 256 + 256 = 200,960
+**Correct Answer:** C) 784 * 256 + 256 = 200,960
 
 **Explanation:** Parameters = (input_features x neurons) + biases = (784 x 256) + 256 = 200,704 + 256 = 200,960. Each neuron has 784 weights (one per input) plus 1 bias.
+
+- **Why others are wrong:**
+  - A) Wrong input dimension calculation
+  - B) This is addition instead of multiplication
+  - D) Forgets the biases
 </details>
 
 ---
 
 ### 38. Why would you choose a deep network (many layers) over a wide network (many neurons in one layer)?
 
-- [ ] A) Deep networks are always faster
-- [ ] B) Deep networks can learn hierarchical features more efficiently
-- [ ] C) Wide networks can't learn non-linear patterns
-- [ ] D) Deep networks always have fewer parameters
+- [ ] A) Wide networks can't learn non-linear patterns
+- [ ] B) Deep networks are always faster
+- [ ] C) Deep networks always have fewer parameters
+- [ ] D) Deep networks can learn hierarchical features more efficiently
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Deep networks can learn hierarchical features more efficiently
+**Correct Answer:** D) Deep networks can learn hierarchical features more efficiently
 
 **Explanation:** Deep networks build abstractions: early layers learn simple features (edges), middle layers combine them (shapes), later layers form complex concepts (objects). This hierarchical learning is more parameter-efficient than trying to learn everything in one wide layer.
 
 - **Why others are wrong:**
-  - A) Deep networks can be slower (more sequential operations)
-  - C) Universal Approximation says wide networks CAN learn any function
-  - D) Parameter count depends on specific architecture
+  - A) Universal Approximation says wide networks CAN learn any function
+  - B) Deep networks can be slower (more sequential operations)
+  - C) Parameter count depends on specific architecture
 </details>
 
 ---
@@ -766,15 +776,15 @@ print(output)
 
 ### 39. What event caused the "First AI Winter" and what was the solution?
 
-- [ ] A) Computers were too slow; faster processors solved it
-- [ ] B) Perceptrons couldn't solve XOR; multi-layer networks solved it
-- [ ] C) Not enough data; the internet provided more data
-- [ ] D) Neural networks were forgotten; a new algorithm was invented
+- [ ] A) Neural networks were forgotten; a new algorithm was invented
+- [ ] B) Computers were too slow; faster processors solved it
+- [ ] C) Perceptrons couldn't solve XOR; multi-layer networks solved it
+- [ ] D) Not enough data; the internet provided more data
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Perceptrons couldn't solve XOR; multi-layer networks solved it
+**Correct Answer:** C) Perceptrons couldn't solve XOR; multi-layer networks solved it
 
 **Explanation:** Minsky and Papert (1969) proved single perceptrons can't solve non-linearly separable problems like XOR. Funding collapsed. The solution came with backpropagation (1986) enabling training of multi-layer networks that CAN solve XOR.
 </details>
@@ -783,15 +793,15 @@ print(output)
 
 ### 40. Why do we need the derivative of the activation function during training?
 
-- [ ] A) To compute the forward pass
-- [ ] B) To calculate gradients for backpropagation and weight updates
-- [ ] C) To normalize the inputs
-- [ ] D) To speed up inference
+- [ ] A) To calculate gradients for backpropagation and weight updates
+- [ ] B) To speed up inference
+- [ ] C) To compute the forward pass
+- [ ] D) To normalize the inputs
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) To calculate gradients for backpropagation and weight updates
+**Correct Answer:** A) To calculate gradients for backpropagation and weight updates
 
 **Explanation:** Backpropagation uses the chain rule: dLoss/dWeight = dLoss/dOutput * dOutput/dActivation * dActivation/dInput * ... The derivative of the activation function is essential for this gradient computation.
 </details>
@@ -800,32 +810,37 @@ print(output)
 
 ### 41. What is "representation learning" in the context of neural networks?
 
-- [ ] A) The network learns to represent itself graphically
-- [ ] B) The network automatically discovers useful features from raw data
-- [ ] C) The network memorizes the training data
-- [ ] D) The network learns to write code
+- [ ] A) The network learns to write code
+- [ ] B) The network learns to represent itself graphically
+- [ ] C) The network automatically discovers useful features from raw data
+- [ ] D) The network memorizes the training data
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) The network automatically discovers useful features from raw data
+**Correct Answer:** C) The network automatically discovers useful features from raw data
 
 **Explanation:** Unlike traditional ML where humans engineer features, neural networks learn representations automatically. Hidden layers transform raw inputs (pixels) into increasingly abstract features (edges, textures, parts, objects).
+
+- **Why others are wrong:**
+  - A) Neural networks don't write code
+  - B) Graphical representation is visualization, not learning
+  - D) Memorization is overfitting, not representation learning
 </details>
 
 ---
 
 ### 42. What is the gradient of ReLU for a positive input (z > 0)?
 
-- [ ] A) 0
-- [ ] B) 1
+- [ ] A) 1
+- [ ] B) -1
 - [ ] C) z
-- [ ] D) -1
+- [ ] D) 0
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) 1
+**Correct Answer:** A) 1
 
 **Explanation:** ReLU(z) = z for z > 0, so d(ReLU)/dz = 1 for z > 0. For z < 0, ReLU(z) = 0, so gradient = 0. At z = 0, the gradient is technically undefined but usually set to 0 or 1.
 </details>

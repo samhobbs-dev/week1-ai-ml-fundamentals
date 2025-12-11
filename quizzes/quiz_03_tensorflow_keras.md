@@ -4,85 +4,85 @@
 
 ### 1. What is TensorFlow primarily used for?
 
-- [ ] A) Web development
-- [ ] B) Machine learning and deep learning
-- [ ] C) Database management
-- [ ] D) Operating system development
+- [ ] A) Machine learning and deep learning
+- [ ] B) Operating system development
+- [ ] C) Web development
+- [ ] D) Database management
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Machine learning and deep learning
+**Correct Answer:** A) Machine learning and deep learning
 
 **Explanation:** TensorFlow is an open-source machine learning framework developed by Google Brain. It provides automatic differentiation, GPU/TPU acceleration, and tools for building, training, and deploying neural networks.
 
 - **Why others are wrong:**
-  - A, C, D) TensorFlow is specialized for ML, not general-purpose programming tasks
+  - B, C, D) TensorFlow is specialized for ML, not general-purpose programming tasks
 </details>
 
 ---
 
 ### 2. What is Keras in relation to TensorFlow 2.x?
 
-- [ ] A) A separate competing framework
-- [ ] B) TensorFlow's high-level neural network API built into TF 2.x
-- [ ] C) A data visualization tool
-- [ ] D) A database for storing models
+- [ ] A) A database for storing models
+- [ ] B) A separate competing framework
+- [ ] C) TensorFlow's high-level neural network API built into TF 2.x
+- [ ] D) A data visualization tool
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) TensorFlow's high-level neural network API built into TF 2.x
+**Correct Answer:** C) TensorFlow's high-level neural network API built into TF 2.x
 
 **Explanation:** Keras was originally a standalone library but is now the official high-level API integrated into TensorFlow 2.x. It provides intuitive abstractions for building models without writing low-level code.
 
 - **Why others are wrong:**
-  - A) Keras is integrated into TensorFlow, not separate
-  - C) TensorBoard handles visualization
-  - D) Keras is an API, not a database
+  - A) Keras is an API, not a database
+  - B) Keras is integrated into TensorFlow, not separate
+  - D) TensorBoard handles visualization
 </details>
 
 ---
 
 ### 3. What is the default execution mode in TensorFlow 2.x?
 
-- [ ] A) Graph execution
-- [ ] B) Eager execution
-- [ ] C) Lazy execution
-- [ ] D) Batch execution
+- [ ] A) Batch execution
+- [ ] B) Graph execution
+- [ ] C) Eager execution
+- [ ] D) Lazy execution
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Eager execution
+**Correct Answer:** C) Eager execution
 
 **Explanation:** TensorFlow 2.x defaults to eager execution, where operations execute immediately and return concrete values. This is more intuitive for debugging. Graph execution is available via @tf.function for performance.
 
 - **Why others are wrong:**
-  - A) Graph execution was default in TF 1.x
-  - C, D) These are not TensorFlow execution modes
+  - A, D) These are not TensorFlow execution modes
+  - B) Graph execution was default in TF 1.x
 </details>
 
 ---
 
 ### 4. What is a tensor?
 
-- [ ] A) A machine learning algorithm
-- [ ] B) A multi-dimensional array of numbers with a uniform data type
-- [ ] C) A type of neural network
-- [ ] D) A Python function
+- [ ] A) A multi-dimensional array of numbers with a uniform data type
+- [ ] B) A Python function
+- [ ] C) A machine learning algorithm
+- [ ] D) A type of neural network
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) A multi-dimensional array of numbers with a uniform data type
+**Correct Answer:** A) A multi-dimensional array of numbers with a uniform data type
 
 **Explanation:** Tensors generalize scalars (rank 0), vectors (rank 1), and matrices (rank 2) to arbitrary dimensions. They are the fundamental data structure in TensorFlow - all data flows through networks as tensors.
 
 - **Why others are wrong:**
-  - A) Tensors are data structures, not algorithms
-  - C) Tensors are used BY neural networks, not a type of network
-  - D) Tensors are data containers, not functions
+  - B) Tensors are data containers, not functions
+  - C) Tensors are data structures, not algorithms
+  - D) Tensors are used BY neural networks, not a type of network
 </details>
 
 ---
@@ -131,86 +131,86 @@
 
 ### 7. What is the purpose of @tf.function decorator?
 
-- [ ] A) To make code run slower
-- [ ] B) To convert a Python function into an optimized TensorFlow graph
+- [ ] A) To create new tensors
+- [ ] B) To make code run slower
 - [ ] C) To print debug information
-- [ ] D) To create new tensors
+- [ ] D) To convert a Python function into an optimized TensorFlow graph
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) To convert a Python function into an optimized TensorFlow graph
+**Correct Answer:** D) To convert a Python function into an optimized TensorFlow graph
 
 **Explanation:** @tf.function traces the Python function and compiles it into an optimized graph. The first call traces; subsequent calls execute the cached, optimized graph. This can provide significant speedups.
 
 - **Why others are wrong:**
-  - A) It makes code run FASTER
+  - A) Tensor creation uses tf.constant, tf.Variable, etc.
+  - B) It makes code run FASTER
   - C) tf.print handles debug printing
-  - D) Tensor creation uses tf.constant, tf.Variable, etc.
 </details>
 
 ---
 
 ### 8. What does tf.reshape(tensor, [2, -1]) do?
 
-- [ ] A) Deletes the tensor
-- [ ] B) Reshapes to 2 rows, automatically calculating columns
-- [ ] C) Creates 2 copies of the tensor
-- [ ] D) Raises an error
+- [ ] A) Reshapes to 2 rows, automatically calculating columns
+- [ ] B) Raises an error
+- [ ] C) Deletes the tensor
+- [ ] D) Creates 2 copies of the tensor
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Reshapes to 2 rows, automatically calculating columns
+**Correct Answer:** A) Reshapes to 2 rows, automatically calculating columns
 
 **Explanation:** The -1 tells TensorFlow to infer that dimension from the total number of elements. If the tensor has 12 elements, [2, -1] becomes [2, 6] (2 rows x 6 columns = 12).
 
 - **Why others are wrong:**
-  - A) reshape doesn't delete data
-  - C) reshape reorganizes, doesn't copy
-  - D) -1 is valid for one dimension
+  - B) -1 is valid for one dimension
+  - C) reshape doesn't delete data
+  - D) reshape reorganizes, doesn't copy
 </details>
 
 ---
 
 ### 9. What is GradientTape used for in TensorFlow?
 
-- [ ] A) Recording gradients for automatic differentiation
-- [ ] B) Playing back audio
-- [ ] C) Visualizing the model
-- [ ] D) Saving the model to disk
+- [ ] A) Saving the model to disk
+- [ ] B) Recording gradients for automatic differentiation
+- [ ] C) Playing back audio
+- [ ] D) Visualizing the model
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** A) Recording gradients for automatic differentiation
+**Correct Answer:** B) Recording gradients for automatic differentiation
 
 **Explanation:** GradientTape records operations during the forward pass, then computes gradients during the backward pass. This is essential for training neural networks using gradient descent.
 
 - **Why others are wrong:**
-  - B, C, D) These are unrelated to gradient computation
+  - A, C, D) These are unrelated to gradient computation
 </details>
 
 ---
 
 ### 10. In Keras Sequential API, what does model.compile() do?
 
-- [ ] A) Executes the model on data
-- [ ] B) Configures the model for training with optimizer, loss function, and metrics
-- [ ] C) Converts the model to C code
-- [ ] D) Prints the model summary
+- [ ] A) Prints the model summary
+- [ ] B) Executes the model on data
+- [ ] C) Configures the model for training with optimizer, loss function, and metrics
+- [ ] D) Converts the model to C code
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Configures the model for training with optimizer, loss function, and metrics
+**Correct Answer:** C) Configures the model for training with optimizer, loss function, and metrics
 
 **Explanation:** compile() sets up the training configuration: which optimizer to use (Adam, SGD), which loss to minimize (MSE, cross-entropy), and which metrics to track (accuracy). It prepares the model for fit().
 
 - **Why others are wrong:**
-  - A) model.fit() executes training
-  - C) compile() doesn't generate C code
-  - D) model.summary() prints the summary
+  - A) model.summary() prints the summary
+  - B) model.fit() executes training
+  - D) compile() doesn't generate C code
 </details>
 
 ---
@@ -237,98 +237,98 @@
 
 ### 12. What does layers.Dense(64, activation='relu') create?
 
-- [ ] A) 64 separate neural networks
-- [ ] B) A fully connected layer with 64 neurons and ReLU activation
-- [ ] C) A convolutional layer with 64 filters
-- [ ] D) A dropout layer with 64% dropout
+- [ ] A) A dropout layer with 64% dropout
+- [ ] B) A convolutional layer with 64 filters
+- [ ] C) 64 separate neural networks
+- [ ] D) A fully connected layer with 64 neurons and ReLU activation
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) A fully connected layer with 64 neurons and ReLU activation
+**Correct Answer:** D) A fully connected layer with 64 neurons and ReLU activation
 
 **Explanation:** Dense means fully connected - every input connects to every neuron. 64 is the number of neurons (units). activation='relu' applies ReLU after the weighted sum.
 
 - **Why others are wrong:**
-  - A) It's one layer, not 64 networks
-  - C) Conv2D creates convolutional layers
-  - D) Dropout layer uses layers.Dropout()
+  - A) Dropout layer uses layers.Dropout()
+  - B) Conv2D creates convolutional layers
+  - C) It's one layer, not 64 networks
 </details>
 
 ---
 
 ### 13. What is the formula for parameter count in a Dense layer?
 
-- [ ] A) (input_features + output_neurons)
-- [ ] B) (input_features * output_neurons) + output_neurons
+- [ ] A) output_neurons only
+- [ ] B) (input_features + output_neurons)
 - [ ] C) (input_features * output_neurons)
-- [ ] D) output_neurons only
+- [ ] D) (input_features * output_neurons) + output_neurons
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) (input_features * output_neurons) + output_neurons
+**Correct Answer:** D) (input_features * output_neurons) + output_neurons
 
 **Explanation:** Each neuron has: (one weight per input) + (one bias). Total = (input_features x neurons) + neurons. The extra "+ neurons" accounts for biases.
 
 - **Why others are wrong:**
-  - A) This is addition, not the correct formula
+  - A) This forgets weights
+  - B) This is addition, not the correct formula
   - C) This forgets biases
-  - D) This forgets weights
 </details>
 
 ---
 
 ### 14. What loss function should you use for multi-class classification with integer labels (not one-hot)?
 
-- [ ] A) binary_crossentropy
-- [ ] B) categorical_crossentropy
-- [ ] C) sparse_categorical_crossentropy
-- [ ] D) mse
+- [ ] A) sparse_categorical_crossentropy
+- [ ] B) mse
+- [ ] C) binary_crossentropy
+- [ ] D) categorical_crossentropy
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) sparse_categorical_crossentropy
+**Correct Answer:** A) sparse_categorical_crossentropy
 
 **Explanation:** sparse_categorical_crossentropy takes integer labels (0, 1, 2, ...) directly. categorical_crossentropy requires one-hot encoded labels ([1,0,0], [0,1,0], ...).
 
 - **Why others are wrong:**
-  - A) binary_crossentropy is for 2-class problems
-  - B) categorical_crossentropy needs one-hot labels
-  - D) MSE is for regression
+  - B) MSE is for regression
+  - C) binary_crossentropy is for 2-class problems
+  - D) categorical_crossentropy needs one-hot labels
 </details>
 
 ---
 
 ### 15. What does model.fit() return?
 
-- [ ] A) The model weights
-- [ ] B) A History object containing training metrics
-- [ ] C) The test accuracy
-- [ ] D) Nothing
+- [ ] A) Nothing
+- [ ] B) The model weights
+- [ ] C) A History object containing training metrics
+- [ ] D) The test accuracy
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) A History object containing training metrics
+**Correct Answer:** C) A History object containing training metrics
 
 **Explanation:** fit() returns a History object with history.history dictionary containing 'loss', 'accuracy', 'val_loss', 'val_accuracy' (if validation_data provided) for each epoch.
 
 - **Why others are wrong:**
-  - A) Weights are stored in the model, accessed via get_weights()
-  - C) Test accuracy comes from model.evaluate()
-  - D) fit() does return something useful
+  - A) fit() does return something useful
+  - B) Weights are stored in the model, accessed via get_weights()
+  - D) Test accuracy comes from model.evaluate()
 </details>
 
 ---
 
 ### 16. Which optimizer is generally the best default choice?
 
-- [ ] A) SGD (Stochastic Gradient Descent)
+- [ ] A) Adagrad
 - [ ] B) Adam
-- [ ] C) RMSprop
-- [ ] D) Adagrad
+- [ ] C) SGD (Stochastic Gradient Descent)
+- [ ] D) RMSprop
 
 <details>
 <summary><b>Click for Solution</b></summary>
@@ -338,9 +338,9 @@
 **Explanation:** Adam (Adaptive Moment Estimation) combines momentum and adaptive learning rates. It typically converges faster and more reliably than vanilla SGD, making it the default choice for most applications.
 
 - **Why others are wrong:**
-  - A) SGD works but often requires careful learning rate tuning
-  - C) RMSprop is good but Adam usually equals or beats it
-  - D) Adagrad can have learning rate issues
+  - A) Adagrad can have learning rate issues
+  - C) SGD works but often requires careful learning rate tuning
+  - D) RMSprop is good but Adam usually equals or beats it
 </details>
 
 ---
@@ -433,15 +433,15 @@ t = tf.constant([[1, 2, 3], [4, 5, 6]])
 print(t.shape)
 ```
 
-- [ ] A) (2,)
-- [ ] B) (3,)
-- [ ] C) (2, 3)
-- [ ] D) (6,)
+- [ ] A) (6,)
+- [ ] B) (2,)
+- [ ] C) (3,)
+- [ ] D) (2, 3)
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) (2, 3)
+**Correct Answer:** D) (2, 3)
 
 **Explanation:** The tensor has 2 rows and 3 columns, making it a 2x3 matrix with shape (2, 3). The outer list has 2 elements, each being a list of 3 elements.
 </details>
@@ -459,15 +459,15 @@ result = tf.reduce_sum(a * b)
 print(result.numpy())
 ```
 
-- [ ] A) [4, 10, 18]
-- [ ] B) 32
-- [ ] C) 21
-- [ ] D) 6
+- [ ] A) 6
+- [ ] B) 21
+- [ ] C) [4, 10, 18]
+- [ ] D) 32
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) 32
+**Correct Answer:** D) 32
 
 **Explanation:** a * b = [4, 10, 18] (element-wise). tf.reduce_sum adds all elements: 4 + 10 + 18 = 32. This is actually the dot product of a and b.
 </details>
@@ -512,15 +512,15 @@ model = Sequential([
 model.summary()
 ```
 
-- [ ] A) 784
-- [ ] B) 128
-- [ ] C) 100,352
-- [ ] D) 100,480
+- [ ] A) 100,480
+- [ ] B) 100,352
+- [ ] C) 784
+- [ ] D) 128
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** D) 100,480
+**Correct Answer:** A) 100,480
 
 **Explanation:** Parameters = (input_features x neurons) + biases = (784 x 128) + 128 = 100,352 + 128 = 100,480.
 </details>
@@ -540,15 +540,15 @@ grad = tape.gradient(y, x)
 print(grad.numpy())
 ```
 
-- [ ] A) 3.0
-- [ ] B) 6.0
+- [ ] A) 2.0
+- [ ] B) 3.0
 - [ ] C) 9.0
-- [ ] D) 2.0
+- [ ] D) 6.0
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) 6.0
+**Correct Answer:** D) 6.0
 
 **Explanation:** y = x^2, so dy/dx = 2x. At x=3, the gradient = 2*3 = 6.0. GradientTape automatically computes this derivative.
 </details>
@@ -666,32 +666,32 @@ model = Sequential([
 
 ### 34. You're building a 10-class image classifier. What should the output layer look like?
 
-- [ ] A) Dense(1, activation='sigmoid')
-- [ ] B) Dense(10, activation='sigmoid')
-- [ ] C) Dense(10, activation='softmax')
-- [ ] D) Dense(10, activation='relu')
+- [ ] A) Dense(10, activation='softmax')
+- [ ] B) Dense(10, activation='relu')
+- [ ] C) Dense(1, activation='sigmoid')
+- [ ] D) Dense(10, activation='sigmoid')
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) Dense(10, activation='softmax')
+**Correct Answer:** A) Dense(10, activation='softmax')
 
 **Explanation:** For multi-class classification, you need one output per class (10), and softmax ensures outputs sum to 1 (probability distribution over classes).
 
 - **Why others are wrong:**
-  - A) 1 output is for binary classification
-  - B) Sigmoid doesn't ensure outputs sum to 1
-  - D) ReLU can output any non-negative value, not probabilities
+  - B) ReLU can output any non-negative value, not probabilities
+  - C) 1 output is for binary classification
+  - D) Sigmoid doesn't ensure outputs sum to 1
 </details>
 
 ---
 
 ### 35. Your model keeps crashing due to memory errors. What might help?
 
-- [ ] A) Use more layers
+- [ ] A) Increase the learning rate
 - [ ] B) Reduce batch_size in model.fit()
-- [ ] C) Add more Dense neurons
-- [ ] D) Increase the learning rate
+- [ ] C) Use more layers
+- [ ] D) Add more Dense neurons
 
 <details>
 <summary><b>Click for Solution</b></summary>
@@ -701,18 +701,18 @@ model = Sequential([
 **Explanation:** Batch size determines how many samples are processed simultaneously, affecting memory usage. Smaller batches use less memory but may train slower or less stably.
 
 - **Why others are wrong:**
-  - A, C) More layers/neurons increase memory usage
-  - D) Learning rate doesn't affect memory
+  - A) Learning rate doesn't affect memory
+  - C, D) More layers/neurons increase memory usage
 </details>
 
 ---
 
 ### 36. You want to prevent your model from overfitting. Which layer could help?
 
-- [ ] A) Dense
-- [ ] B) Flatten
+- [ ] A) Concatenate
+- [ ] B) Dense
 - [ ] C) Dropout
-- [ ] D) Concatenate
+- [ ] D) Flatten
 
 <details>
 <summary><b>Click for Solution</b></summary>
@@ -722,9 +722,9 @@ model = Sequential([
 **Explanation:** Dropout randomly sets a fraction of inputs to 0 during training, preventing the network from relying too heavily on any single feature. This regularization technique reduces overfitting.
 
 - **Why others are wrong:**
-  - A) Dense is a computation layer, not regularization
-  - B) Flatten reshapes data, doesn't regularize
-  - D) Concatenate combines tensors, doesn't regularize
+  - A) Concatenate combines tensors, doesn't regularize
+  - B) Dense is a computation layer, not regularization
+  - D) Flatten reshapes data, doesn't regularize
 </details>
 
 ---

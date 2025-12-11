@@ -4,20 +4,20 @@
 
 ### 1. What distinguishes machine learning from traditional programming?
 
-- [ ] A) Machine learning uses faster computers
-- [ ] B) Machine learning extracts rules from data rather than following hand-coded rules
+- [ ] A) Machine learning extracts rules from data rather than following hand-coded rules
+- [ ] B) Machine learning uses faster computers
 - [ ] C) Machine learning only works with numbers
 - [ ] D) Machine learning requires the internet
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Machine learning extracts rules from data rather than following hand-coded rules
+**Correct Answer:** A) Machine learning extracts rules from data rather than following hand-coded rules
 
 **Explanation:** Traditional programming follows the paradigm: Input Data + Rules --> Output. Machine learning inverts this: Input Data + Output --> Rules (Model). The algorithm discovers patterns from examples rather than following explicitly programmed logic.
 
 - **Why others are wrong:**
-  - A) Speed is not the defining characteristic
+  - B) Speed is not the defining characteristic
   - C) ML works with various data types including text and images
   - D) ML can run entirely offline
 </details>
@@ -26,22 +26,22 @@
 
 ### 2. Which learning paradigm requires labeled data?
 
-- [ ] A) Unsupervised learning
-- [ ] B) Reinforcement learning
-- [ ] C) Supervised learning
-- [ ] D) Transfer learning
+- [ ] A) Transfer learning
+- [ ] B) Unsupervised learning
+- [ ] C) Reinforcement learning
+- [ ] D) Supervised learning
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) Supervised learning
+**Correct Answer:** D) Supervised learning
 
 **Explanation:** Supervised learning trains on labeled examples (input-output pairs). The model learns by comparing its predictions to the known correct answers and adjusting accordingly.
 
 - **Why others are wrong:**
-  - A) Unsupervised learning works with unlabeled data to discover patterns
-  - B) Reinforcement learning uses reward signals, not labels
-  - D) Transfer learning is a technique, not a paradigm defined by labels
+  - A) Transfer learning is a technique, not a paradigm defined by labels
+  - B) Unsupervised learning works with unlabeled data to discover patterns
+  - C) Reinforcement learning uses reward signals, not labels
 </details>
 
 ---
@@ -70,21 +70,21 @@
 
 ### 4. In the linear regression equation y = wx + b, what does 'b' represent?
 
-- [ ] A) The weight
-- [ ] B) The input feature
-- [ ] C) The bias (y-intercept)
+- [ ] A) The bias (y-intercept)
+- [ ] B) The weight
+- [ ] C) The input feature
 - [ ] D) The prediction error
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) The bias (y-intercept)
+**Correct Answer:** A) The bias (y-intercept)
 
 **Explanation:** In y = wx + b, 'b' is the bias term (also called the intercept). It represents the predicted value when all inputs are zero, allowing the regression line to shift up or down from the origin.
 
 - **Why others are wrong:**
-  - A) 'w' is the weight (slope)
-  - B) 'x' is the input feature
+  - B) 'w' is the weight (slope)
+  - C) 'x' is the input feature
   - D) Prediction error is y_actual - y_predicted, not part of the equation
 </details>
 
@@ -92,20 +92,20 @@
 
 ### 5. What is the primary purpose of Mean Squared Error (MSE)?
 
-- [ ] A) To normalize the data
-- [ ] B) To measure prediction error by squaring differences between actual and predicted values
+- [ ] A) To measure prediction error by squaring differences between actual and predicted values
+- [ ] B) To normalize the data
 - [ ] C) To classify data into categories
 - [ ] D) To reduce the number of features
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) To measure prediction error by squaring differences between actual and predicted values
+**Correct Answer:** A) To measure prediction error by squaring differences between actual and predicted values
 
 **Explanation:** MSE = (1/n) * SUM[(actual - predicted)^2]. Squaring makes all errors positive, penalizes large errors more than small ones, and is mathematically convenient (differentiable).
 
 - **Why others are wrong:**
-  - A) Normalization is a separate preprocessing step
+  - B) Normalization is a separate preprocessing step
   - C) MSE is for regression, not classification
   - D) Feature reduction uses techniques like PCA, not MSE
 </details>
@@ -114,20 +114,20 @@
 
 ### 6. Why is the MSE squared rather than just using absolute differences?
 
-- [ ] A) It's computationally faster
-- [ ] B) It prevents cancellation of positive/negative errors and penalizes large errors more
+- [ ] A) It prevents cancellation of positive/negative errors and penalizes large errors more
+- [ ] B) It's computationally faster
 - [ ] C) It makes the values smaller
 - [ ] D) It converts errors to probabilities
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) It prevents cancellation of positive/negative errors and penalizes large errors more
+**Correct Answer:** A) It prevents cancellation of positive/negative errors and penalizes large errors more
 
 **Explanation:** Without squaring, positive errors (+5) and negative errors (-5) would cancel out, giving a misleading average of 0. Squaring ensures all contributions are positive and makes large errors (10^2=100) more impactful than small errors (1^2=1).
 
 - **Why others are wrong:**
-  - A) Squaring is slightly more expensive than absolute value
+  - B) Squaring is slightly more expensive than absolute value
   - C) Squaring makes values larger (10^2 = 100)
   - D) MSE doesn't produce probabilities
 </details>
@@ -136,43 +136,43 @@
 
 ### 7. What does a classification algorithm learn?
 
-- [ ] A) How to predict continuous numbers
-- [ ] B) Decision boundaries that separate different categories
+- [ ] A) The average of all features
+- [ ] B) How to predict continuous numbers
 - [ ] C) How to cluster unlabeled data
-- [ ] D) The average of all features
+- [ ] D) Decision boundaries that separate different categories
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Decision boundaries that separate different categories
+**Correct Answer:** D) Decision boundaries that separate different categories
 
 **Explanation:** Classification algorithms learn to draw boundaries (lines, curves, or hyperplanes) that separate data points belonging to different classes. Points on one side of the boundary are predicted as one class, points on the other side as another class.
 
 - **Why others are wrong:**
-  - A) Continuous prediction is regression
+  - A) Averaging features is not classification
+  - B) Continuous prediction is regression
   - C) Clustering unlabeled data is unsupervised learning
-  - D) Averaging features is not classification
 </details>
 
 ---
 
 ### 8. Despite having "regression" in its name, logistic regression is actually a:
 
-- [ ] A) Regression algorithm
-- [ ] B) Clustering algorithm
-- [ ] C) Classification algorithm
+- [ ] A) Classification algorithm
+- [ ] B) Regression algorithm
+- [ ] C) Clustering algorithm
 - [ ] D) Dimensionality reduction algorithm
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) Classification algorithm
+**Correct Answer:** A) Classification algorithm
 
 **Explanation:** Logistic regression outputs probabilities (values between 0 and 1) using the sigmoid function, which are then thresholded to make discrete class predictions. The "regression" part refers to the underlying linear model before the sigmoid transformation.
 
 - **Why others are wrong:**
-  - A) It predicts categories, not continuous values
-  - B) It uses labeled data, not unlabeled clustering
+  - B) It predicts categories, not continuous values
+  - C) It uses labeled data, not unlabeled clustering
   - D) It doesn't reduce dimensions
 </details>
 
@@ -180,21 +180,21 @@
 
 ### 9. What problem does the sigmoid function solve in logistic regression?
 
-- [ ] A) It speeds up computation
-- [ ] B) It bounds outputs between 0 and 1, interpretable as probabilities
-- [ ] C) It removes outliers
+- [ ] A) It removes outliers
+- [ ] B) It speeds up computation
+- [ ] C) It bounds outputs between 0 and 1, interpretable as probabilities
 - [ ] D) It normalizes the input features
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) It bounds outputs between 0 and 1, interpretable as probabilities
+**Correct Answer:** C) It bounds outputs between 0 and 1, interpretable as probabilities
 
 **Explanation:** Linear regression outputs unbounded values (could be -5 or 100), which don't make sense as probabilities. The sigmoid function S(z) = 1/(1+e^-z) squashes any input to a value strictly between 0 and 1.
 
 - **Why others are wrong:**
-  - A) Sigmoid involves exponential computation, not faster
-  - C) Outlier removal is a separate preprocessing step
+  - A) Outlier removal is a separate preprocessing step
+  - B) Sigmoid involves exponential computation, not faster
   - D) Feature normalization happens before the model
 </details>
 
@@ -202,22 +202,22 @@
 
 ### 10. K-Means clustering requires you to specify:
 
-- [ ] A) The target labels for each cluster
-- [ ] B) The number of clusters (K) in advance
-- [ ] C) The exact position of each centroid
-- [ ] D) The color of each cluster
+- [ ] A) The exact position of each centroid
+- [ ] B) The color of each cluster
+- [ ] C) The target labels for each cluster
+- [ ] D) The number of clusters (K) in advance
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) The number of clusters (K) in advance
+**Correct Answer:** D) The number of clusters (K) in advance
 
 **Explanation:** K-Means requires you to choose K before running the algorithm. This is a key limitation - you must decide how many groups you want, even if the "natural" number of clusters is unknown.
 
 - **Why others are wrong:**
-  - A) K-Means is unsupervised - no labels provided
-  - C) Centroids are randomly initialized, then refined
-  - D) Colors are just visualization, not algorithm input
+  - A) Centroids are randomly initialized, then refined
+  - B) Colors are just visualization, not algorithm input
+  - C) K-Means is unsupervised - no labels provided
 </details>
 
 ---
@@ -244,20 +244,20 @@
 
 ### 12. The Elbow Method helps determine:
 
-- [ ] A) Which features to use
-- [ ] B) The optimal number of clusters (K)
+- [ ] A) The optimal number of clusters (K)
+- [ ] B) Which features to use
 - [ ] C) Whether to use supervised or unsupervised learning
 - [ ] D) The learning rate
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) The optimal number of clusters (K)
+**Correct Answer:** A) The optimal number of clusters (K)
 
 **Explanation:** The Elbow Method plots Within-Cluster Sum of Squares (WCSS) against different K values. The "elbow" point where additional clusters stop significantly reducing WCSS suggests the optimal K.
 
 - **Why others are wrong:**
-  - A) Feature selection uses different techniques
+  - B) Feature selection uses different techniques
   - C) Problem type is determined by data structure
   - D) Learning rate is for gradient descent, not clustering
 </details>
@@ -310,22 +310,22 @@
 
 ### 15. Why is feature scaling important for distance-based algorithms like K-Means?
 
-- [ ] A) It makes the algorithm run faster
-- [ ] B) It prevents features with larger ranges from dominating the distance calculation
+- [ ] A) It converts categorical features to numerical
+- [ ] B) It makes the algorithm run faster
 - [ ] C) It removes outliers from the data
-- [ ] D) It converts categorical features to numerical
+- [ ] D) It prevents features with larger ranges from dominating the distance calculation
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) It prevents features with larger ranges from dominating the distance calculation
+**Correct Answer:** D) It prevents features with larger ranges from dominating the distance calculation
 
 **Explanation:** If income ranges from 0-100,000 and age ranges from 0-100, the income dimension will completely dominate distance calculations. Scaling (e.g., StandardScaler) puts all features on comparable scales.
 
 - **Why others are wrong:**
-  - A) Scaling doesn't significantly affect speed
+  - A) Encoding handles categorical features, not scaling
+  - B) Scaling doesn't significantly affect speed
   - C) Outlier removal is separate from scaling
-  - D) Encoding handles categorical features, not scaling
 </details>
 
 ---
@@ -421,15 +421,15 @@ kmeans.fit(X)
 print(len(np.unique(kmeans.labels_)))
 ```
 
-- [ ] A) 1
-- [ ] B) 2
-- [ ] C) 4
-- [ ] D) 0
+- [ ] A) 4
+- [ ] B) 0
+- [ ] C) 2
+- [ ] D) 1
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) 2
+**Correct Answer:** C) 2
 
 **Explanation:** We specified `n_clusters=2`, so K-Means will assign each point to one of 2 clusters. `kmeans.labels_` contains the cluster assignment (0 or 1) for each point. `np.unique()` finds distinct values, which will be [0, 1], and `len()` of that is 2.
 </details>
@@ -447,22 +447,22 @@ result = np.mean((actual - predicted) ** 2)
 print(result)
 ```
 
-- [ ] A) Mean Absolute Error
-- [ ] B) Mean Squared Error
-- [ ] C) Root Mean Squared Error
-- [ ] D) R-squared
+- [ ] A) Root Mean Squared Error
+- [ ] B) R-squared
+- [ ] C) Mean Absolute Error
+- [ ] D) Mean Squared Error
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Mean Squared Error
+**Correct Answer:** D) Mean Squared Error
 
 **Explanation:** The formula `np.mean((actual - predicted) ** 2)` is exactly the MSE formula: average of squared differences. The result is (0.25 + 0.25 + 1) / 3 = 0.5.
 
 - **Why others are wrong:**
-  - A) MAE would use `np.abs()` instead of squaring
-  - C) RMSE would take `np.sqrt()` of MSE
-  - D) R-squared is a different formula involving variance
+  - A) RMSE would take `np.sqrt()` of MSE
+  - B) R-squared is a different formula involving variance
+  - C) MAE would use `np.abs()` instead of squaring
 </details>
 
 ---
@@ -480,22 +480,22 @@ model.fit(X, y)
 prediction = model.predict([[1.5]])[0]
 ```
 
-- [ ] A) 0.5
-- [ ] B) 0
-- [ ] C) 1
-- [ ] D) 1.5
+- [ ] A) 1.5
+- [ ] B) 1
+- [ ] C) 0
+- [ ] D) 0.5
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) 1
+**Correct Answer:** B) 1
 
 **Explanation:** The data shows 0,1 map to class 0 and 2,3 map to class 1. Input 1.5 is on the boundary but will be classified. `predict()` returns class labels (0 or 1), not probabilities. Given the training data pattern, 1.5 will likely be classified as 1.
 
 - **Why others are wrong:**
-  - A) 0.5 would be a probability, but `predict()` returns class labels
-  - B) Possible but less likely given 1.5 is closer to the "1" region
-  - D) 1.5 is the input, not a valid class output
+  - A) 1.5 is the input, not a valid class output
+  - C) Possible but less likely given 1.5 is closer to the "1" region
+  - D) 0.5 would be a probability, but `predict()` returns class labels
 </details>
 
 ---
@@ -604,102 +604,107 @@ print(distances.shape)
 
 ### 31. A hospital wants to predict whether a tumor is malignant or benign based on cell measurements. Which approach should they use?
 
-- [ ] A) K-Means clustering
-- [ ] B) Linear regression
-- [ ] C) Classification (e.g., Logistic Regression)
-- [ ] D) Dimensionality reduction
+- [ ] A) Linear regression
+- [ ] B) K-Means clustering
+- [ ] C) Dimensionality reduction
+- [ ] D) Classification (e.g., Logistic Regression)
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) Classification (e.g., Logistic Regression)
+**Correct Answer:** D) Classification (e.g., Logistic Regression)
 
 **Explanation:** This is a binary classification problem: predicting one of two categories (malignant/benign) from features. The hospital has historical labeled data (pathology results), making this supervised classification.
 
 - **Why others are wrong:**
-  - A) Clustering doesn't make predictions for specific outcomes
-  - B) Regression predicts continuous values, not categories
-  - D) Dimensionality reduction compresses features, doesn't predict
+  - A) Regression predicts continuous values, not categories
+  - B) Clustering doesn't make predictions for specific outcomes
+  - C) Dimensionality reduction compresses features, doesn't predict
 </details>
 
 ---
 
 ### 32. A marketing team has customer purchase data but no predefined segments. They want to discover natural customer groups. Which approach should they use?
 
-- [ ] A) Supervised classification
-- [ ] B) Linear regression
-- [ ] C) Unsupervised clustering (e.g., K-Means)
-- [ ] D) Logistic regression
+- [ ] A) Logistic regression
+- [ ] B) Supervised classification
+- [ ] C) Linear regression
+- [ ] D) Unsupervised clustering (e.g., K-Means)
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** C) Unsupervised clustering (e.g., K-Means)
+**Correct Answer:** D) Unsupervised clustering (e.g., K-Means)
 
 **Explanation:** With no predefined labels and the goal of discovering natural groupings, this is a textbook unsupervised learning scenario. K-Means can segment customers based on behavior patterns without needing prior labels.
 
 - **Why others are wrong:**
-  - A, D) Supervised methods require labeled data
-  - B) Regression predicts values, doesn't discover groups
+  - A, B) Supervised methods require labeled data
+  - C) Regression predicts values, doesn't discover groups
 </details>
 
 ---
 
 ### 33. Your model achieves 99% accuracy on a fraud detection task where 99% of transactions are legitimate. Is this good performance?
 
-- [ ] A) Yes, 99% is excellent
-- [ ] B) No, the model might just be predicting "legitimate" for everything
-- [ ] C) Yes, but only if precision is also high
-- [ ] D) Cannot determine without the dataset size
+- [ ] A) Cannot determine without the dataset size
+- [ ] B) Yes, 99% is excellent
+- [ ] C) No, the model might just be predicting "legitimate" for everything
+- [ ] D) Yes, but only if precision is also high
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) No, the model might just be predicting "legitimate" for everything
+**Correct Answer:** C) No, the model might just be predicting "legitimate" for everything
 
 **Explanation:** With 99% legitimate transactions, a model that always predicts "legitimate" achieves 99% accuracy while catching zero fraud! This is the class imbalance problem. You need precision, recall, and F1-score to evaluate properly.
+
+- **Why others are wrong:**
+  - A) Dataset size doesn't solve the class imbalance issue
+  - B) High accuracy can be misleading with imbalanced data
+  - D) Precision alone isn't sufficient; recall is equally important
 </details>
 
 ---
 
 ### 34. You're building a model to predict stock prices. The model performs perfectly on historical data but poorly on recent data. What is this symptom called?
 
-- [ ] A) Underfitting
-- [ ] B) Overfitting
-- [ ] C) Feature engineering
-- [ ] D) Cross-validation
+- [ ] A) Cross-validation
+- [ ] B) Feature engineering
+- [ ] C) Underfitting
+- [ ] D) Overfitting
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Overfitting
+**Correct Answer:** D) Overfitting
 
 **Explanation:** Overfitting occurs when a model memorizes training data patterns (including noise) instead of learning generalizable patterns. It performs well on training data but poorly on new, unseen data.
 
 - **Why others are wrong:**
-  - A) Underfitting shows poor performance on BOTH training and test data
-  - C) Feature engineering is creating/selecting features
-  - D) Cross-validation is an evaluation technique
+  - A) Cross-validation is an evaluation technique
+  - B) Feature engineering is creating/selecting features
+  - C) Underfitting shows poor performance on BOTH training and test data
 </details>
 
 ---
 
 ### 35. When should you NOT use machine learning?
 
-- [ ] A) When you have lots of data
-- [ ] B) When simple rules suffice to solve the problem
-- [ ] C) When the problem requires personalization
+- [ ] A) When the problem requires personalization
+- [ ] B) When you have lots of data
+- [ ] C) When simple rules suffice to solve the problem
 - [ ] D) When rules change frequently
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) When simple rules suffice to solve the problem
+**Correct Answer:** C) When simple rules suffice to solve the problem
 
 **Explanation:** ML adds complexity. If you can solve a problem with simple if-else rules (e.g., "reject if amount > $10,000 and account age < 1 day"), that's simpler, faster, more interpretable, and easier to maintain than an ML model.
 
 - **Why others are wrong:**
-  - A, C, D) These are all scenarios where ML shines
+  - A, B, D) These are all scenarios where ML shines
 </details>
 
 ---
@@ -708,95 +713,110 @@ print(distances.shape)
 
 ### 36. What is the "curse of dimensionality" in the context of distance metrics?
 
-- [ ] A) High dimensions make computers crash
-- [ ] B) In high dimensions, all points become roughly equidistant, making distance less meaningful
-- [ ] C) Distance can only be computed in 3 dimensions
+- [ ] A) In high dimensions, all points become roughly equidistant, making distance less meaningful
+- [ ] B) Distance can only be computed in 3 dimensions
+- [ ] C) High dimensions make computers crash
 - [ ] D) Higher dimensions require more memory
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) In high dimensions, all points become roughly equidistant, making distance less meaningful
+**Correct Answer:** A) In high dimensions, all points become roughly equidistant, making distance less meaningful
 
 **Explanation:** As dimensions increase, the ratio of nearest to farthest distances approaches 1. This means "nearest neighbor" loses meaning because everything is approximately the same distance away.
+
+- **Why others are wrong:**
+  - B) Distance can be computed in any number of dimensions
+  - C) High dimensions don't cause crashes, just computational challenges
+  - D) While true, this isn't the "curse" - it's about distance becoming meaningless
 </details>
 
 ---
 
 ### 37. What is K-Means++ and why is it used?
 
-- [ ] A) A faster version of K-Means
-- [ ] B) An initialization strategy that spreads initial centroids apart for better convergence
-- [ ] C) A method to automatically determine K
-- [ ] D) A variant that allows clusters to overlap
+- [ ] A) A method to automatically determine K
+- [ ] B) A faster version of K-Means
+- [ ] C) A variant that allows clusters to overlap
+- [ ] D) An initialization strategy that spreads initial centroids apart for better convergence
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) An initialization strategy that spreads initial centroids apart for better convergence
+**Correct Answer:** D) An initialization strategy that spreads initial centroids apart for better convergence
 
 **Explanation:** K-Means++ chooses initial centroids probabilistically, with points farther from existing centroids more likely to be selected. This spreads centroids apart, leading to better and more consistent clustering results than random initialization.
+
+- **Why others are wrong:**
+  - A) It doesn't determine K, just initializes centroids
+  - B) It's about initialization quality, not speed
+  - C) K-Means always produces non-overlapping clusters
 </details>
 
 ---
 
 ### 38. In the confusion matrix for binary classification, what does a False Positive mean?
 
-- [ ] A) Model correctly predicted positive class
-- [ ] B) Model predicted positive but actual was negative
-- [ ] C) Model predicted negative but actual was positive
-- [ ] D) Model correctly predicted negative class
+- [ ] A) Model predicted positive but actual was negative
+- [ ] B) Model correctly predicted negative class
+- [ ] C) Model correctly predicted positive class
+- [ ] D) Model predicted negative but actual was positive
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) Model predicted positive but actual was negative
+**Correct Answer:** A) Model predicted positive but actual was negative
 
 **Explanation:** False Positive = "falsely positive" = the model said positive/yes, but it was wrong - the actual value was negative. Example: Spam filter marking a legitimate email as spam.
 
 - **Why others are wrong:**
-  - A) That's a True Positive
-  - C) That's a False Negative
-  - D) That's a True Negative
+  - B) That's a True Negative
+  - C) That's a True Positive
+  - D) That's a False Negative
 </details>
 
 ---
 
 ### 39. When would Manhattan distance be preferred over Euclidean distance?
 
-- [ ] A) When working with geographic coordinates
-- [ ] B) When working with high-dimensional or sparse data
-- [ ] C) When you want to emphasize large differences
-- [ ] D) When computing shortest paths
+- [ ] A) When computing shortest paths
+- [ ] B) When you want to emphasize large differences
+- [ ] C) When working with high-dimensional or sparse data
+- [ ] D) When working with geographic coordinates
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) When working with high-dimensional or sparse data
+**Correct Answer:** C) When working with high-dimensional or sparse data
 
 **Explanation:** Manhattan distance is more robust in high dimensions because it doesn't square differences (which would make one large difference dominate). It treats all dimensions more equally and is often preferred for text/document similarity.
 
 - **Why others are wrong:**
-  - A) Geographic coordinates typically use Euclidean or great-circle distance
-  - C) Euclidean emphasizes large differences due to squaring
-  - D) Shortest paths depend on the graph structure, not the metric
+  - A) Shortest paths depend on the graph structure, not the metric
+  - B) Euclidean emphasizes large differences due to squaring
+  - D) Geographic coordinates typically use Euclidean or great-circle distance
 </details>
 
 ---
 
 ### 40. What is the relationship between precision and recall in the context of the classification threshold?
 
-- [ ] A) Increasing threshold increases both precision and recall
-- [ ] B) There is a trade-off: higher threshold increases precision but decreases recall
-- [ ] C) Threshold has no effect on precision and recall
-- [ ] D) Lower threshold always improves model performance
+- [ ] A) Lower threshold always improves model performance
+- [ ] B) Increasing threshold increases both precision and recall
+- [ ] C) There is a trade-off: higher threshold increases precision but decreases recall
+- [ ] D) Threshold has no effect on precision and recall
 
 <details>
 <summary><b>Click for Solution</b></summary>
 
-**Correct Answer:** B) There is a trade-off: higher threshold increases precision but decreases recall
+**Correct Answer:** C) There is a trade-off: higher threshold increases precision but decreases recall
 
 **Explanation:** Higher threshold means "only predict positive if very confident" --> fewer false positives (higher precision) but more false negatives (lower recall). Lower threshold catches more positives (higher recall) but includes more mistakes (lower precision).
+
+- **Why others are wrong:**
+  - A) Lower threshold increases recall but decreases precision - not always better
+  - B) They move in opposite directions, not together
+  - D) Threshold directly affects both metrics
 </details>
 
 ---
