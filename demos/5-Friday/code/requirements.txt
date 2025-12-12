@@ -1,0 +1,7 @@
+# Week 1 - Friday Demos: CNN and Training Visualization
+# Requirements for convolution visualization, CNN building, and training metrics
+
+tensorflow>=2.10.0
+numpy>=1.21.0
+matplotlib>=3.4.0
+
