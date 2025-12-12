@@ -24,7 +24,7 @@ In our **From Zero to Neural** journey, pooling completes your understanding of 
 ```
 Input Feature Map (4x4):        Max Pooling (2x2):      Output (2x2):
 
-[1  3  2  4]                    Take maximum           [4  5]
+[1  3  2  4]                    Take maximum           [5  4]
 [5  2  1  0]    ------>         from each 2x2         [8  6]
 [2  8  3  1]                    region
 [4  1  6  2]
