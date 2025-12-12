@@ -21,22 +21,28 @@ print("\n--- LOADING IMAGE ---")
 
 # Create a simple test image with clear edges
 # (Or load your own image)
-image = np.zeros((100, 100), dtype=np.float32)
-image[20:80, 20:80] = 1.0  # White square on black background
-image[40:60, 40:60] = 0.5  # Gray square inside
+# Load a grayscale image
+image = plt.imread(r"C:\Users\samjh\OneDrive\Downloads\Screenshot_2018-12-31 calvin-hobbes-comics-calvin-and-hobbes-23583442-321-388 jpg (JPEG Image, 321 × 388 pixels).png")
 
-# Add some diagonal lines
-for i in range(100):
-    if i < 100:
-        image[i, min(i, 99)] = 1.0
+# If the image has RGB channels, convert to grayscale
+if image.ndim == 3:
+    image = image.mean(axis=2)
+# image = np.zeros((100, 100), dtype=np.float32)
+# image[20:80, 20:80] = 1.0  # White square on black background
+# image[40:60, 40:60] = 0.5  # Gray square inside
+
+# # Add some diagonal lines
+# for i in range(100):
+#     if i < 100:
+#         image[i, min(i, 99)] = 1.0
 
 print(f"Image shape: {image.shape}")
 
 # TODO: Display the image
-# plt.figure(figsize=(6, 6))
-# plt.imshow(image, cmap='gray')
-# plt.title('Test Image')
-# plt.colorbar()
+plt.figure(figsize=(6, 6))
+plt.imshow(image, cmap='gray')
+plt.title('Test Image')
+plt.colorbar()
 # plt.show()
 
 # =============================================================================
@@ -92,6 +98,19 @@ emboss = np.array([
     [ 0,  1, 2]
 ], dtype=np.float32)
 
+inverse = np.array([
+    [-3, -1, -2],
+    [-2,  1, -2],
+    [ -1, -2, -3]
+], dtype=np.float32)
+
+
+diagonal_filter = np.array([
+    [-2, -1, 0],
+    [-1,  0, 1],
+    [ 0,  1, 2]
+], dtype=np.float32)
+
 # =============================================================================
 # PART 3: APPLY FILTERS
 # =============================================================================
@@ -119,22 +138,24 @@ filters = {
     'Sobel Y': sobel_y,
     'Sharpen': sharpen,
     'Blur': blur,
-    'Emboss': emboss
+    'Emboss': emboss,
+    'Inverse': inverse,
+    'Diagonal': diagonal_filter
 }
 
-# fig, axes = plt.subplots(2, 3, figsize=(15, 10))
-# axes = axes.flatten()
-# 
-# axes[0].imshow(image, cmap='gray')
-# axes[0].set_title('Original')
-# 
-# for i, (name, kernel) in enumerate(filters.items(), start=1):
-#     filtered = apply_filter(image, kernel)
-#     axes[i].imshow(filtered, cmap='gray')
-#     axes[i].set_title(name)
-# 
-# plt.tight_layout()
-# plt.show()
+fig, axes = plt.subplots(2, 4, figsize=(15, 10))
+axes = axes.flatten()
+
+axes[0].imshow(image, cmap='gray')
+axes[0].set_title('Original')
+
+for i, (name, kernel) in enumerate(filters.items(), start=1):
+    filtered = apply_filter(image, kernel)
+    axes[i].imshow(filtered, cmap='gray')
+    axes[i].set_title(name)
+
+plt.tight_layout()
+plt.show()
 
 # =============================================================================
 # PART 4: EDGE MAGNITUDE
@@ -143,9 +164,9 @@ filters = {
 print("\n--- EDGE MAGNITUDE ---")
 
 # TODO: Combine Sobel X and Y
-# edges_x = apply_filter(image, sobel_x)
-# edges_y = apply_filter(image, sobel_y)
-# edge_magnitude = np.sqrt(edges_x**2 + edges_y**2)
+edges_x = apply_filter(image, sobel_x)
+edges_y = apply_filter(image, sobel_y)
+edge_magnitude = np.sqrt(edges_x**2 + edges_y**2)
 
 # =============================================================================
 # PART 5: CUSTOM FILTERS
@@ -155,7 +176,9 @@ print("\n--- CUSTOM FILTERS ---")
 
 # TODO: Create diagonal edge detector
 diagonal_filter = np.array([
-    # Your filter
+    [-3, -1, -2],
+    [-2,  1, -2],
+    [ -1, -2, -3]
 ], dtype=np.float32)
 
 # =============================================================================
