@@ -18,7 +18,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
+from keras import layers
 
 # =============================================================================
 # SECTION 1: INTRODUCTION
@@ -171,8 +171,8 @@ model_overfit = keras.Sequential([
     layers.Conv2D(64, 3, activation='relu', input_shape=(28, 28, 1)),
     layers.Conv2D(128, 3, activation='relu'),
     layers.Flatten(),
-    layers.Dense(512, activation='relu'),
-    layers.Dense(512, activation='relu'),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(128, activation='relu'),
     layers.Dense(10, activation='softmax')
 ])
 
